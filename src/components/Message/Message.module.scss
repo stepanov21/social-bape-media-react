@@ -6,24 +6,7 @@
     grid-template-columns: 1fr 3fr;
     position: relative;
 }
-.wrapper::after {
-    content: '';
-    position: absolute;
-    top: 100px;
-    left: -20px;
-    height: 10px;
-    width: 20px;
-    background-color: $color-black;
-}
-.wrapper::before {
-    content: '';
-    position: absolute;
-    bottom: 100px;
-    left: -20px;
-    height: 10px;
-    width: 20px;
-    background-color: $color-black;
-}
+
 .dialogs {
     background: $color-grey;
     border: 3px solid $color-black;
@@ -37,32 +20,38 @@
 }
 
 .messages {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: flex-end;
     position: relative;
     background: $color-grey;
     border: 3px solid $color-black;
     padding: 25px;
 }
 
-.messages::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: -24px;
-    height: 10px;
-    width: 22px;
-    background-color: $color-black;
-}
 
-.messages .item {
+.messagesin {
     display: inline-block;
     background-color: $color-second;
     padding: 14px 20px 14px 20px;
+    margin-right: auto;
+    margin-bottom: 5px;
     border-radius: 10px;
     position: relative;
     z-index: 5;
 }
-.messages .item::after {
+.messagesout {
+    display: inline-block;
+    background-color: $color-second;
+    padding: 14px 20px 14px 20px;
+    margin-left: auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 5;
+}
+
+.messagesin::after {
     content: '';
     position: absolute;
     height: 20px;
@@ -72,8 +61,17 @@
     bottom: -5px;
     z-index: -1;
     left: 15px;
-
-
+}
+.messagesout::after {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: $color-second;
+    transform: rotate(45deg);
+    bottom: -5px;
+    z-index: -1;
+    right: 15px;
 }
 
 

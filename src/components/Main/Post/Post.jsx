@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Post({key, props}) {
+function Post({props}) {
   return (
-    <div className="posts__item" key={key}>
+    <div className="posts__item">
       <div className="posts__avatar">
         <img src={props.avatar} alt="" />
       </div>

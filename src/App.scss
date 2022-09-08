@@ -58,7 +58,23 @@ body {
     background: $color-grey;
     border: 3px solid $color-black;
     max-height: 82vh;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .best-friends {
+      max-width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 0 auto 20px;
+      .best-friend {
+        max-width: 45%;
+        img{
+          border-radius: 50px;
+        }
+      }
+    }
     &__list{
       margin: 9px 25px;
     }

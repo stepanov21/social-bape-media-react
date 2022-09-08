@@ -1,30 +1,31 @@
 import React from 'react';
-import {BiRightArrowAlt} from 'react-icons/bi';
+import { useState } from 'react';
+import AddPost from './AddPost/AddPost';
 import Post from './Post/Post';
 
-function Main(props) {
-
-  const db = [
-    { 
+function Main({data}) {
+  const [posts, setPosts] = useState([
+    {
       avatar: "https://www.cointribune.com/app/uploads/2021/09/bayc2.jpg",
       name: "Igor Stepanov",
       text: "Where are you going?",
-      id: 1
+      id: 1,
     },
     {
-      avatar: "https://variety.com/wp-content/uploads/2021/10/Guy-oseary-ape.jpg?w=1000",
-      name: "Anna Shubina",
-      text: "How are you??",
-      id: 2
+      avatar: "https://www.cointribune.com/app/uploads/2021/09/bayc2.jpg",
+      name: "Igor Stepanov",
+      text: "Where are you going?",
+      id: 1,
     },
     {
-      avatar: "https://www.thismorningonchain.com/content/images/2022/06/Bored-Ape-Yacht-Club-Discord-Hacked--Millions-Stolen-from-Members.png",
-      name: "Evgeniy Chipushilo",
-      text: "I'm not a gay",
-      id: 2
+      avatar: "https://www.cointribune.com/app/uploads/2021/09/bayc2.jpg",
+      name: "Igor Stepanov",
+      text: "Where are you going?",
+      id: 1,
     },
+  ]);
 
-  ];
+
   return (
     <main className="main">
     <div className="main__content">
@@ -44,12 +45,8 @@ function Main(props) {
         </div>
       </div>
       <div className="main__posts posts">
-        <div className="posts__send send">
-          <p className="send__title">My posts</p>
-          <textarea className="send__field"></textarea>
-          <button className="send__button">Send <BiRightArrowAlt className="send__arrow"/><div></div></button>
-        </div>
-        {db.map((item) => <Post key={item.id} props={item}/>)}
+        <AddPost/>
+        {data.posts.map((item, id) => <Post key={id} props={item}/>)}
       </div>
     </div>
   </main>

@@ -11,14 +11,17 @@ import Message from './components/Message/Message'
 
 
 
-function App() {
+function App({data}) {
+
+  console.log(data.profilePage);
+
   return (
     <div className="wrapper">
       <Header />
-      <Aside />
+      <Aside data={data.aside}/>
       <Routes>
-        <Route path="/profile" element={<Main />}/>           
-        <Route path="/message" element={<Message />}/>           
+        <Route path="/" element={<Main data={data.profilePage}/>}/>           
+        <Route path="/message" element={<Message data={data.messagesPage}/>}/>           
       </Routes>
     </div>
   );

@@ -1,14 +1,16 @@
 import React from 'react';
+import Friend from './Friend/Friend';
 import s from './Message.module.scss'
 
-function Message(props) {
+function Message({data}) {
     return (
         <div className={s.wrapper}>
             <div className={s.dialogs}>
-                <div className={s.item}>Igor Stepanov</div>
+                {data.friend.map((item, id)=> <Friend key={id} name={item}/>)}
             </div>
             <div className={s.messages}>
-                <div className={s.item}>Hello, how are you?</div>
+                <div className={s.messagesin}>Hello, how are you?</div> <br/>
+                <div className={s.messagesout}>Hello, how are you?Hello, how are you?Hello, how are you?Hello, how are you?Hello, how are you?Hello, how are you?Hello, how are you?Hello, how are you?</div>
             </div>
         </div>
     );
